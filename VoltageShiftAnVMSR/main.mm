@@ -1380,52 +1380,52 @@ void unloadkext() {
     
  
     
-    if (!isUnloadOnEnd)
-        return;
+//    if (!isUnloadOnEnd)
+//        return;
     
     
-    if(connect)
-    {
-       kern_return_t ret = IOServiceClose(connect);
-        if (ret != KERN_SUCCESS)
-        {
-          
-        }
-    }
+//    if(connect)
+//    {
+//       kern_return_t ret = IOServiceClose(connect);
+//        if (ret != KERN_SUCCESS)
+//        {
+
+//        }
+//   }
     
-    if(service)
-        IOObjectRelease(service);
+//    if(service)
+//        IOObjectRelease(service);
     
 
 
     
-    std::stringstream output;
-    output << "sudo kextunload -q -b "
-      << "com.sicreative.VoltageShift"
-    << " " ;
+//    std::stringstream output;
+//    output << "sudo kextunload -q -b "
+//      << "com.sicreative.VoltageShift"
+//    << " " ;
     
-    system(output.str().c_str());
+//    system(output.str().c_str());
 
 }
 
 void loadkext() {
     
-    isUnloadOnEnd = true;
+//    isUnloadOnEnd = true;
     
-    std::stringstream output;
-    output << "sudo kextutil -q -r ./  -b "
-    << "com.sicreative.VoltageShift"
-    << " " ;
+//    std::stringstream output;
+//    output << "sudo kextutil -q -r ./  -b "
+//    << "com.sicreative.VoltageShift"
+//    << " " ;
 
-    system(output.str().c_str());
+//    system(output.str().c_str());
     
-    output.str("");
+//    output.str("");
     
-    output << "sudo kextutil -q -r /Library/Application\\ Support/VoltageShift/ -b "
-    << "com.sicreative.VoltageShift"
-    << " " ;
+//    output << "sudo kextutil -q -r /Library/Application\\ Support/VoltageShift/ -b "
+//    << "com.sicreative.VoltageShift"
+//    << " " ;
     
-    system(output.str().c_str());
+//    system(output.str().c_str());
     
     
 }
